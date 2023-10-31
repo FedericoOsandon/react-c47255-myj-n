@@ -36,10 +36,10 @@ const Home = ( { saludo } ) => {
             
             <p>{saludo}</p>
             <ItemCount />
-            {/* <div ref={divRef} >
+            <div ref={divRef} >
                 contenido original
             </div>
-               <button onClick={handleClik}>cambio de contenido </button>  */}
+            <button onClick={handleClik}>cambio de contenido </button> 
                 
         </div>
     )
