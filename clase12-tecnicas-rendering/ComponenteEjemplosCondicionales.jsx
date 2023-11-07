@@ -86,13 +86,13 @@ export  function LoadingComponent() {
 export  function TextComponent({ user = false, children  }) {    
     
     if ( !user ) {        
-        return <h1> Ud no puede ver este componente</h1>
+        return <h1> Ud no puede ver este componente porque no está logueado</h1>
     }
 
   
     return (
         <>      
-            {/* <h2>Ud esta logueado puede ver la pág.</h2> */}
+            <h2>Ud esta logueado puede ver la pág.</h2>
             {children}
         </>
     )
@@ -102,16 +102,16 @@ export  function TextComponent({ user = false, children  }) {
 //   condicion ? :  => if else ,    condicion && => if   ,    condicion ||  or
 
 
-export  function TextComponent2({ admin = false }) {
+export  function TextComponent2({ user = 'admin' }) {
 
     // Llamado context 
     return (
         <>
             <button className="btn btn-outline-danger">Para todos</button>
             {/* if () {} -> condition && */}
-            {admin && <button className="btn btn-outline-danger">Admin</button>}
+            {user==='admin' && <button className="btn btn-outline-danger">Admin</button>}
 
-            {!admin && <button className="btn btn-outline-primary" >No admin</button>}
+            {user!=='admin' && <button className="btn btn-outline-primary" >User</button>}
 
         </>
     );
@@ -125,12 +125,12 @@ export  function TextComponent2({ admin = false }) {
 
 
 
-export  function TextComponent3({ stock = 1 }) {
+export  function TextComponent3({ stock = 0 }) {
 
     return (
         <>
+            {/* {stock === 0 ? <h2>No hay stock </h2> : <h3>HAy stock</h3> }                     */}
             <h2> { stock === 0 ? 'NO Hay Stock' : 'Hay stock' } </h2>   
-            {/* condition ? <h2>texto</h2>: <h3>otro texto</h3>                      */}
         </>
     )
 }
@@ -143,9 +143,9 @@ export  function TextComponent3({ stock = 1 }) {
 
 
     // 0 -> false verdadero, 1 -> true
- export function TextComponent4({ stock = 0 }) {
+ export function TextComponent4({ stock = 1 }) {
 
-    const estiloComponent4 = { color: stock ? "green" : "red" }
+    // const estiloComponent4 = { color: stock ? "green" : "red" }
 
     return (
         <>
@@ -169,13 +169,13 @@ export  function TextComponent3({ stock = 1 }) {
 
 
   
-export  function TextComponent5({ stock = 3 }) {
+export  function TextComponent5({ stock = 0 }) {
 
 
     return (
         <>
             <h2 className ={ ( stock !== 0  ) ? "alert alert-success" : "alert alert-danger" }>
-            { stock === 0 ? 'NO Hay Stock' : 'Hay stock' }
+                { stock === 0 ? 'NO Hay Stock' : 'Hay stock' }
             </h2>
         </>
     );
@@ -197,11 +197,11 @@ export  function TextComponent5({ stock = 3 }) {
 
 
 
-export  function TextComponent6( { stock = 1, otro}  ) {
+export  function TextComponent6( { stock = 1, otro='mt-5'}  ) {
     return (
         <>
             <h2
-                className={ `${stock !== 0 ? "alert alert-success" : "alert alert-danger"} ${otro || ""} `}
+                className={ `${stock !== 0 ? "alert alert-success" : "alert alert-danger"} ${otro || ""}`}
             >
                 Stock
                 {/* <h2> { stock === 0 ? 'NO Hay Stock' : 'Hay stock' } </h2> */}
@@ -221,7 +221,7 @@ export  function TextComponent6( { stock = 1, otro}  ) {
 
 
 
-export function TextComponent7({ condition = false , otro = "mt-5" }) {
+export function TextComponent7({ condition = true , otro = "mt-5" }) {
     
     
     const props = condition ?
