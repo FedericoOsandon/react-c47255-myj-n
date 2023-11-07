@@ -25,7 +25,7 @@ function ItemListContainer({ greeting = 'saludando por defecto' }) {
             {/* { [1,2,3,4,5].map((numero, index) => <li key={index} >{numero}</li>) } */}
             {   loading ? <h2>Cargando...</h2> 
                 :
-                products.map(product =>    <div className="card w-25">
+                products.map(product =>    <div key={product.id} className="card w-25">
                                                 <img src={product.imageUrl} className="card-img-top"/>
                                                 <div className="card-body">
                                                     <p>Nombre: {product.name}</p>
