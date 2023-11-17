@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 #Proyecto Mercadito Fede
 
 
 
 
+=======
+>>>>>>> c3dc013052893f77d9cf0131d79748d19d3b2c67
 ### React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -35,6 +38,9 @@ Nombre - Versionado - breve descripción de lo hace dependencias externas
 | react-icons | [plugins/onedrive/README.md][PlOd] |
 | Medium | [plugins/medium/README.md][PlMe] |
 |react-router-doms | [plugins/googleanalytics/README.md][PlGa] |
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> c3dc013052893f77d9cf0131d79748d19d3b2c67
